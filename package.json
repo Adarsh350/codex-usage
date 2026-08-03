@@ -1,0 +1,50 @@
+{
+  "name": "codex-usage",
+  "displayName": "Codex Usage",
+  "description": "Shows current Codex rate-limit usage in the VS Code status bar, read live from the Codex app server.",
+  "version": "1.0.1",
+  "publisher": "adarsh",
+  "author": "Adarsh Shankar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adarsh350/codex-usage.git"
+  },
+  "keywords": [
+    "codex",
+    "openai",
+    "status bar",
+    "rate limits",
+    "usage"
+  ],
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:codex-usage.refresh"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codex-usage.refresh",
+        "title": "Codex Usage: Refresh"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "npm run build && node --test test/*.test.js",
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.96.0",
+    "@vscode/vsce": "^3.6.0",
+    "typescript": "^5.8.0"
+  }
+}
